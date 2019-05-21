@@ -43,7 +43,7 @@ $(function() {
         container.find('.info-progress').removeClass('invisible');
         prevButton.removeClass('invisible')
         nextButton.removeClass('invisible')
-        init();
+        updateCurrentStep(1);
     });
 
     prevButton.on('click', function() {
@@ -59,11 +59,6 @@ $(function() {
             updateCurrentStep(currentStep);
         }
     });
-
-
-    function init() {
-        updateCurrentStep(8);
-    }
 
     function updateCurrentStep(stepValue) {
         var dots = [redDot, yellowDot, greenDot, targetDot];
