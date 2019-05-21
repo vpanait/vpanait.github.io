@@ -1,6 +1,6 @@
 $(function() {
-    var scaleMin = 5252.72;
-    var scaleMax = 5643.88;
+    var scaleMin = 5288.60;
+    var scaleMax = 5720.00;
     var animationDuration = 800;
 
     var redCoords = [
