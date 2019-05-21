@@ -19,7 +19,7 @@ $(function() {
 
     // Verify that we have the same number of steps
     if (!areEqual(redCoords.length, yellowCoords.length, greenCoords.length, targetCoords.length)) {
-        console.log(' >> Please check data consistency');
+        // console.log(' >> Please check data consistency');
     }
 
     var container = $('.animation-container');
@@ -62,7 +62,7 @@ $(function() {
 
 
     function init() {
-        updateCurrentStep(1);
+        updateCurrentStep(8);
     }
 
     function updateCurrentStep(stepValue) {
@@ -72,34 +72,32 @@ $(function() {
         previousStep = currentStep;
         currentStep = stepValue;
 
-        console.log(">> Step #", stepValue)
-
         // Update dots state + position
         for (var i = 0; i < dots.length; i++) {
             var currentDot = dots[i];
             var currentCoordsSet = coords[i];
-            let currentCoord = currentCoordsSet[currentStep - 1];
-            console.log('>', currentCoord)
+            var currentCoord = currentCoordsSet[currentStep - 1];
+            var dotAnimDuration = animationDuration;
 
             // State
             if (currentDot.hasClass('hidden') && currentCoord != 0) {
+                dotAnimDuration = 0;
                 currentDot.removeClass('hidden');
             }
             if (currentCoord == 0) {
                 currentDot.addClass('hidden');
             }
 
+            // No animation if it is initialization
+            if (previousStep === 0) {
+                dotAnimDuration = 0;
+            }
+
             // Position
             if (currentCoord != 0) {
-                currentDot.animate({ "left": calculateOffsetValue(currentCoord) + "%" },
-                    (previousStep != 0 ? animationDuration : 0)
-                );
+                currentDot.animate({ "left": calculateOffsetValue(currentCoord) + "%" }, dotAnimDuration);
             }
         }
-
-        // Update texts
-        container.find('.current-step').text(currentStep);
-        container.find('.total-steps').text(totalSteps);
 
         // Update table selected row
         dataTable.find('tr').removeClass('active');
