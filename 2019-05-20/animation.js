@@ -34,11 +34,15 @@ $(function() {
     var prevButton = container.find('.button.prev');
     var nextButton = container.find('.button.next');
 
+    var dataTable = container.find('.animation-data table');
+
     var previousStep = 0;
     var currentStep = 0;
 
     startButton.on('click', function() {
         container.find('.info-progress').removeClass('invisible');
+        prevButton.removeClass('invisible')
+        nextButton.removeClass('invisible')
         init();
     });
 
@@ -96,6 +100,10 @@ $(function() {
         // Update texts
         container.find('.current-step').text(currentStep);
         container.find('.total-steps').text(totalSteps);
+
+        // Update table selected row
+        dataTable.find('tr').removeClass('active');
+        dataTable.find('tr').eq(currentStep).addClass('active');
     }
 
 
