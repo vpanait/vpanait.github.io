@@ -1,0 +1,38 @@
+Effort:
+#1 this will imply a bit more time to set up the things. But i have experience with Typescript, so all ok. 
+    #2 DONE
+    #3 DONE
+    #4 DONE
+#5 medium but doable. will imply a little code modifications
+    #6 DONE
+    #7 DONE
+    #8 DONE
+#9 
+#10 a bit more complex as I have to add new elements and animate them. Lets say it is more time consuming that difficult. 
+
+
+
+1. Scripting to be Typescript instead of Javascript
+
+2. Axis to dynamically re-scale (-2% at left end & +5% at right end) based on the min-max value of the dots when animating for a row.
+
+3. Axis must display the start & end values (calculated above in point-2) just above the line
+
+4. Axis must display the end arrow → at right end of the axis
+
+5. Data values to be read from input JSON file (please convert the current table to JSON). These values must be used for animating & also display the same as a table on the page (like how it is currently). The data values shouldn't be hard-coded anywhere in the script/css/html files.
+
+6. Display the values when mouse hover over the dots
+
+7. Green dot (when it appears first) must appear after yellow has finished moving to it's new position
+
+8. (low priority) Animation of one row should be completed before the next one starts. Currently, when I click on the next button multiple times quickly, the animations are not in order
+
+9. I have added a new column to the data table called "Status" (refer to the shared google sheet - https://docs.google.com/spreadsheets/d/1P0sigZI762h6xalEAu95okJRhoodHqacEW39g8wbhAc/edit?usp=sharing). The current yellow dot is for the default status "In Progress". Just in case the status was any of the below, then the yellow dot should be still yellow, but can we make it look different. If you have some suggestions other than the below, please let me know
+a. Completed (yellow dot is changed to GREEN https://fontawesome.com/icons/thumbs-up?style=solid)
+b. Exit (yellow dot is changed to yellow LIGHT RED https://fontawesome.com/icons/thumbs-down?style=solid)
+c. Expired (yellow dot is changed to DARK ORANGE https://fontawesome.com/icons/battery-slash?style=solid)
+d. Error (yellow dot is changed to DARK RED https://fontawesome.com/icons/bug?style=solid)
+e. Cancelled (yellow dot is changed to DARK GREY https://fontawesome.com/icons/ban?style=solid)
+
+10. Connect the red & yellow dot to form a cylinder (refer to my mockup). And also connect the yellow and green dot to form a cylinder. When animating, the cylinder must shrink and move as a single unit. The lines joining the dots to form a cylinder must be of the same colour as the axis. The axis shouldn't be seen behind the cylinder body (the mockup shows this but please ignore it). Cylinder body must be transparent, not colouring.
