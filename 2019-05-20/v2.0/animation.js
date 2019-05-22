@@ -355,21 +355,22 @@ $(function() {
         let nonNullCoords = coords.filter(function(val) {
             return val !== null
         });
+        let result = {
+            min: scaleMin,
+            max: scaleMax
+        }
 
         let valMin = Math.min(...nonNullCoords);
         let valMax = Math.max(...nonNullCoords);
 
         if (!scaleMin || valMin < scaleMin) {
-            scaleMin = valMin * 0.98;
+            result.min = valMin * 0.98;
         }
         if (!scaleMax || valMax > scaleMax) {
-            scaleMax = valMax * 1.05;
+            result.max = valMax * 1.05;
         }
 
-        return {
-            min: scaleMin,
-            max: scaleMax
-        }
+        return result;
     }
 
     function getCylinderData(dotsLeftOffsets) {
