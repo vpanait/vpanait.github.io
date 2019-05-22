@@ -66,7 +66,7 @@ $(function() {
         {
             "step": 0.09,
             "status": "Error",
-            "red": 5538.6,
+            "red": 5200,
             "yellow": 5540,
             "green": null,
             "target": 5588
@@ -115,7 +115,7 @@ $(function() {
             "step": 0.15,
             "status": "In Progress",
             "red": null,
-            "yellow": 5700,
+            "yellow": 5900,
             "green": 5678.24,
             "target": 5588
         },
@@ -356,12 +356,19 @@ $(function() {
             return val !== null
         });
 
-        let calcMin = Math.min(...nonNullCoords) * 0.98;
-        let calcMax = Math.max(...nonNullCoords) * 1.05;
+        let valMin = Math.min(...nonNullCoords);
+        let valMax = Math.max(...nonNullCoords);
+
+        if (!scaleMin || valMin < scaleMin) {
+            scaleMin = valMin * 0.98;
+        }
+        if (!scaleMax || valMax > scaleMax) {
+            scaleMax = valMax * 1.05;
+        }
 
         return {
-            min: !scaleMin ? calcMin : Math.min(scaleMin, calcMin),
-            max: !scaleMax ? calcMax : Math.max(scaleMax, calcMax)
+            min: scaleMin,
+            max: scaleMax
         }
     }
 
