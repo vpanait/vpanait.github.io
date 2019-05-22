@@ -147,6 +147,7 @@ $(function() {
     // Cache DOM elements
     let container = $('.animation-container');
 
+    let cylinder = container.find('.cylinder');
     let redDot = container.find('.dot.red');
     let yellowDot = container.find('.dot.yellow');
     let greenDot = container.find('.dot.green');
@@ -172,7 +173,7 @@ $(function() {
     populateTable();
 
     startButton.on('click', function() {
-        updateCurrentStep(1);
+        updateCurrentStep(14);
     });
 
     prevButton.on('click', function() {
@@ -206,6 +207,8 @@ $(function() {
         let labels = [redLabel, yellowLabel, greenLabel, targetLabel];
         let coords = [dataSet.red, dataSet.yellow, dataSet.green, dataSet.target];
         let globalAnimationTimeNeed = 0;
+        let dotsLeftOffsets = [];
+        let newDotAppeared = false;
 
         previousStep = currentStep;
         currentStep = stepValue;
@@ -250,9 +253,16 @@ $(function() {
 
             globalAnimationTimeNeed = Math.max(globalAnimationTimeNeed, dotAnimDuration);
 
+            if (currentDot.hasClass('hidden') && currentCoord != null && previousStep !== 0) {
+                newDotAppeared = true;
+            }
+
             // Animate position
             if (currentCoord != null) {
-                currentDot.animate({ "left": calculateOffsetValue(currentCoord, coords) + "%" },
+                let leftOffset = calculateOffsetValue(currentCoord, coords);
+                dotsLeftOffsets[i] = leftOffset;
+
+                currentDot.animate({ "left": leftOffset + "%" },
                     dotAnimDuration,
                     () => {
                         if (currentDot.hasClass('hidden')) {
@@ -260,9 +270,30 @@ $(function() {
                         }
                     }
                 );
-
             }
         }
+
+        // Animate cylinder
+        let cylinderData = getCylinderData(dotsLeftOffsets);
+        let cylinderAnimationDelay = newDotAppeared ? globalAnimationTimeNeed : 0;
+
+        if (newDotAppeared) {
+            cylinder.addClass('hidden').css("display", "none");
+        }
+
+        setTimeout(function() {
+            cylinder.animate({
+                    "left": cylinderData.leftMin + "%",
+                    "width": cylinderData.width + "%"
+                },
+                (previousStep === 0 || newDotAppeared) ? 0 : globalAnimationTimeNeed,
+                () => {
+                    if (cylinder.hasClass('hidden')) {
+                        cylinder.removeClass('hidden').css("display", "block");
+                    }
+                }
+            );
+        }, cylinderAnimationDelay);
 
 
         // Update scale min and max values
@@ -315,6 +346,21 @@ $(function() {
 
         scaleMin = Math.min(...nonNullCoords) * 0.98;
         scaleMax = Math.max(...nonNullCoords) * 1.05;
+    }
+
+    function getCylinderData(dotsLeftOffsets) {
+        let dotsOffsets = dotsLeftOffsets.slice(0, 3).filter(function(val) {
+            return val !== null
+        });
+
+        let leftMin = Math.min(...dotsOffsets);
+        let leftMax = Math.max(...dotsOffsets);
+
+        return {
+            leftMin: leftMin,
+            leftMax: leftMax,
+            width: leftMax - leftMin
+        }
     }
 
     function populateTable() {

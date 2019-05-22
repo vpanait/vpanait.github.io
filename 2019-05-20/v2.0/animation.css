@@ -52,6 +52,37 @@ body {
     right: -35px;
 }
 
+.animation-container .cylinder {
+    position: absolute;
+    height: 20px;
+    top: -10px;
+    background-color: white;
+    border: 2px solid #CCCCCC;
+}
+
+
+/* .animation-container .cylinder:after,
+.animation-container .cylinder:before {
+    border: 1px solid #CCCCCC;
+    border-radius: 50%;
+    content: " ";
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    pointer-events: none;
+    background-color: white;
+}
+
+.animation-container .cylinder:after {
+    top: -2px;
+    right: -12px;
+}
+
+.animation-container .cylinder:before {
+    top: -2px;
+    left: -12px;
+} */
+
 .animation-container .dot {
     position: absolute;
     border: 1px solid #CCCCCC;
