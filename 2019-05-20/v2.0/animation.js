@@ -139,8 +139,8 @@ $(function() {
         'cancelled': 'fas fa-ban',
     }
 
-    let scaleMin = -1;
-    let scaleMax = -1;
+    let scaleMin = null;
+    let scaleMax = null;
     let previousStep = 0;
     let currentStep = 0;
 
@@ -209,6 +209,7 @@ $(function() {
         let globalAnimationTimeNeed = 0;
         let dotsLeftOffsets = [];
         let newDotAppeared = false;
+        let scaleChanged = false;
 
         previousStep = currentStep;
         currentStep = stepValue;
@@ -216,8 +217,20 @@ $(function() {
         // Disable navigation buttons before animation 
         disableNavigationBottons();
 
-        calculateScaleMinMaxValues(coords);
+        // Calculate scale min max 
+        let newScaleValues = calculateScaleMinMaxValues(coords);
+        if (scaleMin != newScaleValues.min) {
+            scaleMin = newScaleValues.min;
+            scaleChanged = true;
+        }
+        if (scaleMax != newScaleValues.max) {
+            scaleMax = newScaleValues.max;
+            scaleChanged = true;
+        }
 
+        // Update scale min and max values
+        scaleMinDiv.removeClass('hidden').text(formatNumber(scaleMin));
+        scaleMaxDiv.removeClass('hidden').text(formatNumber(scaleMax));
 
         // Update dots state + position
         for (let i = 0; i < dots.length; i++) {
@@ -225,30 +238,15 @@ $(function() {
             let currentLabel = labels[i];
             let currentCoord = coords[i];
 
-            // Update dots values
-            if (i === 1) {
-                currentLabel.find('.status').text(dataSet.status);
-                currentLabel.find('.value').text(formatNumber(currentCoord));
-
-                // Add class name for yellow dot
-                let newClassName = toCssClass(dataSet.status);
-                if (currentDot.data('status')) {
-                    currentDot.removeClass(currentDot.data('status'));
-                }
-                currentDot.addClass(newClassName);
-                currentDot.data('status', newClassName);
-
-                currentDot.find('i').removeClass().addClass(yellowDotStatusClasses[newClassName]);
-            } else {
-                currentLabel.text(formatNumber(currentCoord))
-            }
-
             // No animation if it is initialization
             let dotAnimDuration = (previousStep === 0) ? 0 : animationDuration;
 
-            // Hide button if no data
+            // Hide dot if no data | Hide target if scale change
             if (currentCoord == null) {
                 currentDot.addClass('hidden');
+            }
+            if (currentDot.hasClass('target') && scaleChanged) {
+                currentDot.addClass('invisible');
             }
 
             globalAnimationTimeNeed = Math.max(globalAnimationTimeNeed, dotAnimDuration);
@@ -265,8 +263,26 @@ $(function() {
                 currentDot.animate({ "left": leftOffset + "%" },
                     dotAnimDuration,
                     () => {
-                        if (currentDot.hasClass('hidden')) {
-                            currentDot.removeClass('hidden');
+                        if (currentDot.hasClass('hidden') || currentDot.hasClass('invisible')) {
+                            currentDot.removeClass('hidden').removeClass('invisible');
+                        }
+
+                        // Update dots values
+                        if (i === 1) {
+                            currentLabel.find('.status').text(dataSet.status);
+                            currentLabel.find('.value').text(formatNumber(currentCoord));
+
+                            // Add class name for yellow dot
+                            let newClassName = toCssClass(dataSet.status);
+                            if (currentDot.data('status')) {
+                                currentDot.removeClass(currentDot.data('status'));
+                            }
+                            currentDot.addClass(newClassName);
+                            currentDot.data('status', newClassName);
+
+                            currentDot.find('i').removeClass().addClass(yellowDotStatusClasses[newClassName]);
+                        } else {
+                            currentLabel.text(formatNumber(currentCoord))
                         }
                     }
                 );
@@ -295,10 +311,6 @@ $(function() {
             );
         }, cylinderAnimationDelay);
 
-
-        // Update scale min and max values
-        scaleMinDiv.removeClass('hidden').text(formatNumber(scaleMin));
-        scaleMaxDiv.removeClass('hidden').text(formatNumber(scaleMax));
 
         // Update table selected row
         dataTable.find('tr').removeClass('active');
@@ -344,8 +356,13 @@ $(function() {
             return val !== null
         });
 
-        scaleMin = Math.min(...nonNullCoords) * 0.98;
-        scaleMax = Math.max(...nonNullCoords) * 1.05;
+        let calcMin = Math.min(...nonNullCoords) * 0.98;
+        let calcMax = Math.max(...nonNullCoords) * 1.05;
+
+        return {
+            min: !scaleMin ? calcMin : Math.min(scaleMin, calcMin),
+            max: !scaleMax ? calcMax : Math.max(scaleMax, calcMax)
+        }
     }
 
     function getCylinderData(dotsLeftOffsets) {
