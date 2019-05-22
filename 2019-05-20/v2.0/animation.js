@@ -173,7 +173,7 @@ $(function() {
     populateTable();
 
     startButton.on('click', function() {
-        updateCurrentStep(14);
+        updateCurrentStep(1);
     });
 
     prevButton.on('click', function() {
