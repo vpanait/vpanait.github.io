@@ -1,5 +1,4 @@
 $(function() {
-    let animationDuration = 800;
     let animationData = [{
             "step": 0.01,
             "status": "In Progress",
@@ -130,10 +129,22 @@ $(function() {
         }
     ];
 
+    let animationDuration = 800;
+    let yellowDotStatusClasses = {
+        'in-progress': '',
+        'completed': 'fas fa-thumbs-up',
+        'exit': 'fas fa-thumbs-down',
+        'expired': 'fas fa-unlink',
+        'error': 'fas fa-bug',
+        'cancelled': 'fas fa-ban',
+    }
+
     let scaleMin = -1;
     let scaleMax = -1;
+    let previousStep = 0;
+    let currentStep = 0;
 
-
+    // Cache DOM elements
     let container = $('.animation-container');
 
     let redDot = container.find('.dot.red');
@@ -157,8 +168,6 @@ $(function() {
 
     let dataTable = container.find('.animation-data table');
 
-    let previousStep = 0;
-    let currentStep = 0;
 
     populateTable();
 
@@ -183,18 +192,15 @@ $(function() {
     allDots.on({
         mouseenter: function() {
             $(this).find(".label").removeClass('hidden');
-            console.log('in');
         },
         mouseleave: function() {
             $(this).find(".label").addClass('hidden');
-            console.log('out');
         }
     });
 
 
     function updateCurrentStep(stepValue) {
         let dataSet = animationData[stepValue - 1];
-        console.log(dataSet)
 
         let dots = [redDot, yellowDot, greenDot, targetDot];
         let labels = [redLabel, yellowLabel, greenLabel, targetLabel];
@@ -217,7 +223,22 @@ $(function() {
             let currentCoord = coords[i];
 
             // Update dots values
-            currentLabel.text(formatNumber(currentCoord))
+            if (i === 1) {
+                currentLabel.find('.status').text(dataSet.status);
+                currentLabel.find('.value').text(formatNumber(currentCoord));
+
+                // Add class name for yellow dot
+                let newClassName = toCssClass(dataSet.status);
+                if (currentDot.data('status')) {
+                    currentDot.removeClass(currentDot.data('status'));
+                }
+                currentDot.addClass(newClassName);
+                currentDot.data('status', newClassName);
+
+                currentDot.find('i').removeClass().addClass(yellowDotStatusClasses[newClassName]);
+            } else {
+                currentLabel.text(formatNumber(currentCoord))
+            }
 
             // No animation if it is initialization
             let dotAnimDuration = (previousStep === 0) ? 0 : animationDuration;
@@ -325,6 +346,13 @@ $(function() {
 
     function isNumber(value) {
         return value && !isNaN(value);
+    }
+
+    function toCssClass(value) {
+        if (value) {
+            return value.replace(/\s+/g, '-').toLowerCase();
+        }
+        return value;
     }
 
 });

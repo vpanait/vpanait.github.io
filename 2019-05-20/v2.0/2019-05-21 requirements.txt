@@ -7,7 +7,7 @@ Effort:
     #6 DONE
     #7 DONE
     #8 DONE
-#9 
+    #9 DONE
 #10 a bit more complex as I have to add new elements and animate them. Lets say it is more time consuming that difficult. 
 
 
@@ -29,10 +29,10 @@ Effort:
 8. (low priority) Animation of one row should be completed before the next one starts. Currently, when I click on the next button multiple times quickly, the animations are not in order
 
 9. I have added a new column to the data table called "Status" (refer to the shared google sheet - https://docs.google.com/spreadsheets/d/1P0sigZI762h6xalEAu95okJRhoodHqacEW39g8wbhAc/edit?usp=sharing). The current yellow dot is for the default status "In Progress". Just in case the status was any of the below, then the yellow dot should be still yellow, but can we make it look different. If you have some suggestions other than the below, please let me know
-a. Completed (yellow dot is changed to GREEN https://fontawesome.com/icons/thumbs-up?style=solid)
-b. Exit (yellow dot is changed to yellow LIGHT RED https://fontawesome.com/icons/thumbs-down?style=solid)
+a.. Completed (yellow dot is changed to GREEN https://fontawesome.com/icons/thumbs-up?style=solid)
+b.. Exit (yellow dot is changed to yellow LIGHT RED https://fontawesome.com/icons/thumbs-down?style=solid)
 c. Expired (yellow dot is changed to DARK ORANGE https://fontawesome.com/icons/battery-slash?style=solid)
-d. Error (yellow dot is changed to DARK RED https://fontawesome.com/icons/bug?style=solid)
-e. Cancelled (yellow dot is changed to DARK GREY https://fontawesome.com/icons/ban?style=solid)
+d.. Error (yellow dot is changed to DARK RED https://fontawesome.com/icons/bug?style=solid)
+e.. Cancelled (yellow dot is changed to DARK GREY https://fontawesome.com/icons/ban?style=solid)
 
 10. Connect the red & yellow dot to form a cylinder (refer to my mockup). And also connect the yellow and green dot to form a cylinder. When animating, the cylinder must shrink and move as a single unit. The lines joining the dots to form a cylinder must be of the same colour as the axis. The axis shouldn't be seen behind the cylinder body (the mockup shows this but please ignore it). Cylinder body must be transparent, not colouring.
