@@ -1,371 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <meta name="description" content="vali CV">
-    <meta name="theme-color" content="#0079CA">
-    <title>vali</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <meta name="description" content="vali CV" />
+    <meta name="theme-color" content="#0079CA" />
+    <title>Who is Vali</title>
     <!--<base href="/">-->
-    <base href=".">
+    <base href="." />
     <!-- start: Favicon -->
-    <link rel="shortcut icon" href="http://valipanait.me/assets/img/favicon/favicon.png?v=3">
+    <link rel="shortcut icon" href="./assets/coding.png" />
     <!-- end: Favicon -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./assets/style.css" rel="stylesheet">
-</head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/style.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <div class="sidebar">
-            <div class="sidebar-logo">
-                <h1>
-                    <small>Who is</small> Vali?
-                </h1>
-            </div>
+      <div class="sidebar">
+        <div class="sidebar-logo">
+          <h1><small>Who is</small> Vali?</h1>
+        </div>
 
-            <div class="sidebar-user">
-                <img alt="Vali" class="img-circle user-img" src="./assets/vali.jpg">
-                <p>
-                    <span class="user-title">Hola,</span> I am Vali! <i aria-hidden="true" class="fa fa-smile-o"></i>
-                </p>
-            </div>
+        <div class="sidebar-user">
+          <img alt="Vali" class="img-circle user-img" src="./assets/vali.jpg" />
+        </div>
 
-            <div class="sidebar-list">
+        <div class="sidebar-list">
+          <ul class="countries">
+            <li class="active">
+              <div class="country-body">
+                <ul class="cv-items">
+                  <li id="menu_profile" class="cv-section">
+                    <div class="cv-header">
+                      <span class="item-city"> Profile </span>
+                    </div>
+                  </li>
 
-                <ul class="countries">
-                    <li class="active">
-                        <div class="country-body">
-                            <ul class="cv-items">
-                                <!-- vali: 
-                                    agregas aca mas seccion nombres; 
-                                    el ID es importante. el format es 'menu_X' 
-                                -->
+                  <li id="menu_experience" class="cv-section">
+                    <div class="cv-header">
+                      <span class="item-city"> Experience </span>
+                    </div>
+                  </li>
 
-                                <li id="menu_profile" class="cv-section">
-                                    <div class="cv-header">
-                                        <span class="item-city">
-                                            Profile
-                                        </span>
-                                    </div>
-                                </li>
+                  <li id="menu_skills" class="cv-section">
+                    <div class="cv-header">
+                      <span class="item-city">
+                        Skills &amp; certifications
+                      </span>
+                    </div>
+                  </li>
 
-                                <li id="menu_experience" class="cv-section">
-                                    <div class="cv-header">
-                                        <span class="item-city">
-                                            Experience
-                                        </span>
-                                    </div>
-                                </li>
+                  <li id="menu_education" class="cv-section">
+                    <div class="cv-header">
+                      <span class="item-city"> Education </span>
+                    </div>
+                  </li>
 
-                                <li id="menu_skills" class="cv-section">
-                                    <div class="cv-header">
-                                        <span class="item-city">
-                                            Skills &amp; work
-                                        </span>
-                                    </div>
-                                </li>
+                  <li id="menu_languages" class="cv-section">
+                    <div class="cv-header">
+                      <span class="item-city"> Foreign languages </span>
+                    </div>
+                  </li>
 
-                                <li id="menu_education" class="cv-section">
-                                    <div class="cv-header">
-                                        <span class="item-city">
-                                            Education
-                                        </span>
-                                    </div>
-                                </li>
+                  <li id="menu_hobbies" class="cv-section">
+                    <div class="cv-header">
+                      <span class="item-city"> Hobbies </span>
+                    </div>
+                  </li>
 
-                                <li id="menu_languages" class="cv-section">
-                                    <div class="cv-header">
-                                        <span class="item-city">
-                                            Foreign languages
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li id="menu_hobbies" class="cv-section">
-                                    <div class="cv-header">
-                                        <span class="item-city">
-                                            Hobbies
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li id="menu_contact" class="cv-section">
-                                    <div class="cv-header">
-                                        <span class="item-city">
-                                            Say hello!
-                                        </span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                  <li id="menu_contact" class="cv-section">
+                    <div class="cv-header">
+                      <span class="item-city"> Say hello! </span>
+                    </div>
+                  </li>
                 </ul>
-            </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-right-background hidden-xs"></div>
+
+      <div class="details cv-details">
+        <div class="details-header">
+          <h2></h2>
+          <button class="btn btn-close" title="Close" type="button">×</button>
         </div>
 
-        <div class="cv-right-background hidden-xs"></div>
-
-        <div class="details cv-details">
-            <div class="details-header">
-                <h2></h2>
-                <button class="btn btn-close" title="Close" type="button">×</button>
-            </div>
-
-            <!-- vali: 
-                agregas aca mas seccion content; 
-                el ID es importante. Si el menu ID es 'menu_X', el id aca debe ser 'X'
-            -->
-
-            <!-- PROFILE -->
-            <div id="profile" class="details-description">
-                <div class="note-body">
-                    <p>
-                        <i class="skill">Human</i>, traveler, programmer, romanian and many more
-                        <i aria-hidden="true" class="fa fa-smile-o"></i>
-                    </p>
-                    <p>
-                        I’m a dedicated and enthusiastic person who strongly believes that doing a
-                        <i class="skill">good job</i> is a principle, not a request. I enjoy putting to use my analytic thinking and flexibility in reasoning when tackling difficult tasks.
-                    </p>
-                    <p>
-                        When I am not on the road or working I enjoy
-                        <i class="skill">running</i>, especially on mountain trails, hiking, squash. I'm also a keen observer of myself and of the others in order to figure out how the human brain works, to discover common biases. I like to learn from
-                        the mistakes we do (or lessons, how I like to call them) so I can become
-                        <i class="skill">a better version</i> of myself each day.
-                    </p>
-                </div>
-            </div>
-
-            <!-- EXPERIENCE -->
-            <div id="experience" class="details-description">
-                <h3>
-                    <span class="cv-job">Full Stack Web Developer</span>
-
-                    <div class="cv-place">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <a href="http://valipanait.me/" target="_blank">personal site</a>, Bucharest, Romania
-                    </div>
-
-                    <div class="cv-date">
-                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 2017 - December 2017 (2 months)
-                    </div>
-                </h3>
-
-                <div class="note-body">
-                    <p>
-                        For the trip across Latina America I prepared a small website so I can share part of the experience with family and friends. The site was made from scratch using
-                        <i class="skill">Angular 4 with CLI</i>. The backend is written in
-                        <i class="skill">NodeJS</i> and the database is
-                        <i class="skill">MongoDB</i>.
-                    </p>
-
-                    <p>
-                        Other technologies used:
-                        <li>
-                            <i class="skill">HTML 5, CSS 3</i>
-                        </li>
-                        <li>
-                            <i class="skill">GIT</i>
-                        </li>
-                    </p>
-                </div>
-            </div>
-
-            <!-- SKILLS -->
-            <div id="skills" class="details-description">
-                <div class="note-body">
-                    <p>
-                        One of the most challenging project was to make the framework for Ipsos online surveys. Here is a <a href="https://cdn.ipsosinteractive.com/IISDemo.htm" target="_blank">demo link <i class="fa fa-external-link-square" aria-hidden="true"></i></a>.
-                        It is coded using <i class="skill">jQuery</i>.
-                    </p>
-
-                    <p>
-                        Another project that I am proud of is this site, a tracker of my journey across Latin America. Take a look <a href="http://valipanait.me/" target="_blank">here <i class="fa fa-external-link-square" aria-hidden="true"></i></a> to
-                        see where the roads took me <i class="fa fa-smile-o" aria-hidden="true"></i> Is coded using <i class="skill">Angular 4, NodeJS and MongoDB</i>.
-                    </p>
-
-                    <p>
-                        Some of my technical skills include:
-                        <li>
-                            <i class="skill fixed-width">Angular 2+</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> 2+ years
-                        </li>
-                        <li>
-                            <i class="skill fixed-width">jQuery</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> 5+ years
-                        </li>
-                        <li>
-                            <i class="skill fixed-width">HTML, CSS, JS</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> 8+ years
-                        </li>
-                        <li>
-                            <i class="skill fixed-width">NodeJS</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> less than 1 year
-                        </li>
-                        <li>
-                            <i class="skill fixed-width">MongoDB</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> less than 1 year
-                        </li>
-                        <li>
-                            <i class="skill fixed-width">SASS / LEESS</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> 1+ year
-                        </li>
-                        <li>
-                            <i class="skill fixed-width">Angular 1</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> less than 1 year
-                        </li>
-                        <li>
-                            <i class="skill fixed-width">Dimensions</i>
-                            <i class="fa fa-caret-right" aria-hidden="true"></i> 4+ year
-                        </li>
-                        <li>
-                            And many more like: <i class="skill">PHP, Java, Oracle Forms & Reports</i>, etc but for a shorter periods or a longer time ago
-                        </li>
-                    </p>
-
-
-                    <p>
-                        For the last three years I worked on <i class="skill">Agile</i> teams.
-                    </p>
-                    <p>
-                        During my working career I also attended at a lot of trainings and conferences, some technical (JS Camp), others focused on soft skills (train to train, career coaching, etc.)
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- EDUCATION -->
-            <div id="education" class="details-description">
-                <div class="note-body">
-                    <h3>
-                        <span class="cv-job">Master’s Degree in Economic Informatics</span>
-
-                        <div class="cv-place">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> Academy of Economic Studies, Bucharest, Romania
-                        </div>
-                        <div class="cv-university">
-                            <i class="fa fa-university" aria-hidden="true"></i> Faculty of Economic Cybernetics, Statistics and Informatics
-                        </div>
-
-                        <div class="cv-date">
-                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2008 – 2010
-                        </div>
-                    </h3>
-
-                    <h3>
-                        <span class="cv-job">Bachelor’s Degree in Management</span>
-
-                        <div class="cv-place">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> Academy of Economic Studies, Bucharest, Romania
-                        </div>
-                        <div class="cv-university">
-                            <i class="fa fa-university" aria-hidden="true"></i> Faculty of Management
-                        </div>
-
-                        <div class="cv-date">
-                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2008 – 2010
-                        </div>
-                    </h3>
-
-                    <h3>
-                        <span class="cv-job">Bachelor’s Degree in Economic Informatics</span>
-
-                        <div class="cv-place">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> Academy of Economic Studies, Bucharest, Romania
-                        </div>
-                        <div class="cv-university">
-                            <i class="fa fa-university" aria-hidden="true"></i> Faculty of Economic Cybernetics, Statistics and Informatics
-                        </div>
-
-                        <div class="cv-date">
-                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2005 – 2008
-                        </div>
-                    </h3>
-
-                    <h3>
-                        <span class="cv-job">Mathematics-Computer Science</span>
-
-                        <div class="cv-place">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i> Constanta, Romania
-                        </div>
-                        <div class="cv-university">
-                            <i class="fa fa-university" aria-hidden="true"></i> Mircea cel Batran National College
-                        </div>
-
-                        <div class="cv-date">
-                            <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2001 – 2005
-                        </div>
-                    </h3>
-                </div>
-            </div>
-
-            <!-- LANGUAGES -->
-            <div id="languages" class="details-description">
-                <div class="note-body">
-                    <p>
-                        I am a native <i class="skill">Romanian</i> speaker. Besides that, I speak...
-                        <li><i class="skill">English</i> &nbsp;<i class="fa fa-caret-right" aria-hidden="true"></i> advanced level</li>
-                        <li><i class="skill">Spanish</i> <i class="fa fa-caret-right" aria-hidden="true"></i> beginner/intermediate level</li>
-                        <li><i class="skill">French</i> &nbsp; <i class="fa fa-caret-right" aria-hidden="true"></i> beginner level</li>
-                    </p>
-                </div>
-            </div>
-
-            <!-- HOBBIES -->
-            <div id="hobbies" class="details-description">
-                <div class="note-body">
-                    <p>
-                        I enjoy a lot being outside and do sports.
-                    </p>
-                    <p>
-                        My favorite is <i class="skill">trail running</i>. I am doing that for the past five years. I usually go for the marathon distance. And of course, when not running, I go slower meaning <i class="skill">hiking</i> <i class="fa fa-smile-o"
-                            aria-hidden="true"></i>
-                    </p>
-                    <p>
-                        Other sports I like doing are <i class="skill">squash</i>, <i class="skill">volley</i> (if it is beach volley is even better), <i class="skill">biking</i>, <i class="skill">tennis</i> and a few more.
-                    </p>
-                    <p>
-                        Other field I am interested in and I started to discover quite recent is <i class="skill">psychology</i>. Really cool to get to know yourself better and be able to take the control switching from instinctual reactions to chosen
-                        options.
-                    </p>
-                    <p>
-                        Last, but not less important, is <i class="skill">traveling</i> <i class="fa fa-smile-o" aria-hidden="true"></i> It really relates a lot with psychology from my point of view, especially when you do it for a longer time span. It
-                        takes you out of the usual life, full with well-known habits and throws you in a beautiful unpredictable world where each day brings something new. Awesome!
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- CONTACT -->
-            <div id="contact" class="details-description">
-                <div class="note-body">
-                    <p>
-                        If you want to contact me, you can reach me here:
-
-                    </p>
-                    <p>
-                        <i class="fa fa-envelope" aria-hidden="true"></i> valentin.panait@gmail.com |
-                        <a href="https://web.facebook.com/valentin.panait.77" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> |
-                        <a href="https://www.linkedin.com/in/vali-panait" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a> |
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i> (+4)0 724 083 832
-                    </p>
-                </div>
-            </div>
-
-
-
-
-
-
-
+        <!-- PROFILE -->
+        <div id="profile" class="details-description">
+          <div class="note-body">
+            <p>
+              I'm a dedicated and enthusiastic person who strongly believes that
+              doing a
+              <i class="skill">good job</i> is a principle, not a request. I
+              enjoy putting to use my analytic thinking and flexibility in
+              reasoning when tackling difficult tasks.
+            </p>
+            <p>
+              When I am not on the road or working I enjoy
+              <i class="skill">running</i>, especially on mountain trails,
+              hiking, squash. I'm also a keen observer of myself and of the
+              others in order to figure out how the human brain works, to
+              discover common biases. I like to learn from the mistakes we do
+              (or lessons, how I like to call them) so I can become
+              <i class="skill">a better version</i> of myself each day.
+            </p>
+          </div>
         </div>
 
+        <!-- EXPERIENCE -->
+        <div id="experience" class="details-description">
+          <section id="playtika">
+            <h3>
+              <span class="cv-job"
+                >NodeJS and React Developer & SCRUM Master</span
+              >
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <a href="https://www.playtika.com/" target="_blank">Playtika</a
+                >, Bucharest, Romania
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                January 2020 - April 2021 (1 year and 4 months)
+              </div>
+            </h3>
+
+            <div class="note-body">
+              <p>
+                As a senior developer I:
+                <li>
+                  Coded various microservices in <i class="skill">NodeJS</i>,
+                  integrating technologies like
+                  <i class="skill">Kafka, ELK, etc</i>
+                </li>
+                <li>
+                  Worked on the <i class="skill">React</i> admin portal that
+                  handled the players of the game studio
+                </li>
+              </p>
+              <p>
+                From my role as a SCRUM Master I:
+                <li>Managed the usual <i class="skill">Agile ceremonies</i></li>
+                <li>
+                  Guided the <i class="skill">interaction</i>
+                  between the team and the stakeholders.
+                </li>
+              </p>
+              <p>
+                This year helped sharpen my backend skills and it gave me the
+                opportunity to have a greater influence on the organization of
+                the team.
+              </p>
+            </div>
+          </section>
+
+          <section id="traveller">
+            <h3>
+              <span class="cv-job">Traveller</span>
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                Latin America
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                January 2018 - November 2019 (1 year and 11 months)
+              </div>
+            </h3>
+
+            <div class="note-body">
+              <p>
+                During this time I travelled inside Latin America, trying to
+                discover as much as I could about the culture, culture and
+                people. It made me realize that each
+                <i class="skill">problem</i>
+                that comes up also has at least
+                <i class="skill">one solution</i>. It was an “outside the
+                comfort zone” experience, a continuous act of
+                <i class="skill">learning and adapting</i>.
+              </p>
+            </div>
+          </section>
+
+          <section id="endava">
+            <h3>
+              <span class="cv-job"
+                >Senior Frontend Developer & Career Coach</span
+              >
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <a href="https://www.endava.com/" target="_blank">Endava</a>,
+                Bucharest, Romania
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                August 2015 - December 2017 (2 years and 5 months)
+              </div>
+            </h3>
+
+            <div class="note-body">
+              <p>
+                As a senior developer I:
+                <li>
+                  Delivered <i class="skill">high quality work</i> for our
+                  client in the banking industry. Our technology of choice was
+                  <i class="skill">Angular</i>
+                </li>
+                <li>
+                  I <i class="skill">helped and guided</i> the other team
+                  members to improve and reach their full potential.
+                </li>
+              </p>
+              <p>
+                From my role as a career coach I:
+                <li>
+                  Was responsible for the <i class="skill">evaluation</i> of the
+                  people I coached
+                </li>
+                <li>
+                  Guided them to establish and achieve their goals by having a
+                  close relation based on
+                  <i class="skill">honesty, openness and respect</i>.
+                </li>
+              </p>
+              <p>
+                The biggest fulfilment of this period was to realize the impact
+                I had on the people I worked with, their gratitude for our
+                synergy and the given support.
+              </p>
+            </div>
+          </section>
+
+          <section id="ibm">
+            <h3>
+              <span class="cv-job">Frontend Developer</span>
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <a href="https://www.ibm.com/" target="_blank">IBM</a>,
+                Bucharest, Romania
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                September 2014 - July 2015 (11 months)
+              </div>
+            </h3>
+
+            <div class="note-body">
+              <p>
+                As a developer I:
+                <li>
+                  Worked on
+                  <i class="skill">mobile applications and widgets</i> used on
+                  various IBM internal portals
+                </li>
+                <li>
+                  Developed different web pages (mini-tools) requested by IBM
+                  internal clients.
+                </li>
+              </p>
+              <p>
+                In this couple of months, I received an excellent feedback from
+                the projects stakeholders and I had a great interaction with the
+                other peers.
+              </p>
+            </div>
+          </section>
+
+          <section id="iis-competence">
+            <h3>
+              <span class="cv-job">Senior Scripting Competence Manager</span>
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <a href="https://www.ipsos.com/" target="_blank"
+                  >Ipsos Interactive Services</a
+                >, Bucharest, Romania
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                August 2010 - August 2014 (4 years and 1 month)
+              </div>
+            </h3>
+
+            <div class="note-body">
+              <p>
+                In this role I:
+                <li>
+                  Developed and maintained the
+                  <i class="skill"
+                    >scripting framework and the UI (user interface)
+                    templates</i
+                  >
+                  that are used by all Ipsos Group online research entities
+                </li>
+                <li>
+                  Redesigned and optimised the
+                  <i class="skill">production work flows</i>
+                </li>
+                <li>
+                  <i class="skill">Trained & coached</i> the production
+                  developers
+                </li>
+              </p>
+            </div>
+          </section>
+
+          <section id="iis-production">
+            <h3>
+              <span class="cv-job">Online Surveys Programmer</span>
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <a href="https://www.ipsos.com/" target="_blank"
+                  >Ipsos Interactive Services</a
+                >, Bucharest, Romania
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                June 2007 - August 2010 (3 years and 3 months)
+              </div>
+            </h3>
+
+            <div class="note-body">
+              <p>
+                <li>
+                  I created various algorithms that, for certain kinds of
+                  projects,
+                  <i class="skill">reduced programming time at half</i>
+                </li>
+                <li>
+                  I delivered high quality work matching the agreed deadlines
+                  for the surveys I had to code
+                </li>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- SKILLS -->
+        <div id="skills" class="details-description">
+          <div class="note-body">
+            <p>
+              Since the end of 2020 I am a certified
+              <i class="skill">Professional Scrum Master (PSM 1)</i>
+            </p>
+            <p>
+              Some of my technical skills include:
+              <li>
+                <i class="skill fixed-width">React</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> 2+ years
+              </li>
+              <li>
+                <i class="skill fixed-width">NodeJS</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> 1 year
+              </li>
+              <li>
+                <i class="skill fixed-width">Angular 2+</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> 2+ years
+              </li>
+              <li>
+                <i class="skill fixed-width">jQuery</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> 5+ years
+              </li>
+              <li>
+                <i class="skill fixed-width">HTML, CSS, JS</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> 8+ years
+              </li>
+              <li>
+                <i class="skill fixed-width">MongoDB</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> less than 1
+                year
+              </li>
+              <li>
+                <i class="skill fixed-width">SASS / LEESS</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> 1+ year
+              </li>
+              <li>
+                <i class="skill fixed-width">Angular 1</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i> less than 1
+                year
+              </li>
+            </p>
+
+            <p>
+              For the last three years I worked on
+              <i class="skill">Agile</i> teams.
+            </p>
+            <p>
+              During my working career I also attended at a lot of trainings and
+              conferences, some technical (JS Camp), others focused on soft
+              skills (train to train, career coaching, etc.)
+            </p>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div id="education" class="details-description">
+          <div class="note-body">
+            <h3>
+              <span class="cv-job"
+                >Master’s Degree in Economic Informatics</span
+              >
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Academy of
+                Economic Studies, Bucharest, Romania
+              </div>
+              <div class="cv-university">
+                <i class="fa fa-university" aria-hidden="true"></i> Faculty of
+                Economic Cybernetics, Statistics and Informatics
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2008 –
+                2010
+              </div>
+            </h3>
+
+            <h3>
+              <span class="cv-job">Bachelor’s Degree in Management</span>
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Academy of
+                Economic Studies, Bucharest, Romania
+              </div>
+              <div class="cv-university">
+                <i class="fa fa-university" aria-hidden="true"></i> Faculty of
+                Management
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2008 –
+                2010
+              </div>
+            </h3>
+
+            <h3>
+              <span class="cv-job"
+                >Bachelor’s Degree in Economic Informatics</span
+              >
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Academy of
+                Economic Studies, Bucharest, Romania
+              </div>
+              <div class="cv-university">
+                <i class="fa fa-university" aria-hidden="true"></i> Faculty of
+                Economic Cybernetics, Statistics and Informatics
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2005 –
+                2008
+              </div>
+            </h3>
+
+            <h3>
+              <span class="cv-job">Mathematics-Computer Science</span>
+
+              <div class="cv-place">
+                <i class="fa fa-map-marker" aria-hidden="true"></i> Constanta,
+                Romania
+              </div>
+              <div class="cv-university">
+                <i class="fa fa-university" aria-hidden="true"></i> Mircea cel
+                Batran National College
+              </div>
+
+              <div class="cv-date">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2001 –
+                2005
+              </div>
+            </h3>
+          </div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div id="languages" class="details-description">
+          <div class="note-body">
+            <p>
+              I am a native <i class="skill">Romanian</i> speaker. Besides that,
+              I speak...
+              <li>
+                <i class="skill">English</i> &nbsp;<i
+                  class="fa fa-caret-right"
+                  aria-hidden="true"
+                ></i>
+                advanced level
+              </li>
+              <li>
+                <i class="skill">Spanish</i>
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+                advanced level
+              </li>
+              <li>
+                <i class="skill">French</i> &nbsp;
+                <i class="fa fa-caret-right" aria-hidden="true"></i> beginner
+                level
+              </li>
+            </p>
+          </div>
+        </div>
+
+        <!-- HOBBIES -->
+        <div id="hobbies" class="details-description">
+          <div class="note-body">
+            <p>I enjoy a lot being outside and do sports.</p>
+            <p>
+              My favorite is <i class="skill">trail running</i>. I am doing that
+              for the past five years. I usually go for the marathon distance.
+              And of course, when not running, I go slower meaning
+              <i class="skill">hiking</i>
+              <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </p>
+            <p>
+              Other sports I like doing are <i class="skill">squash</i>,
+              <i class="skill">volley</i> (if it is beach volley is even
+              better), <i class="skill">biking</i>,
+              <i class="skill">tennis</i> and a few more.
+            </p>
+            <p>
+              Other field I am interested in and I started to discover quite
+              recent is <i class="skill">psychology</i>. It is fullfilling to
+              better know yourself and to be able to take the initiative,
+              switching from instinctual reactions to chosen options.
+            </p>
+            <p>
+              Last, but not less important, is <i class="skill">traveling</i>
+              <i class="fa fa-smile-o" aria-hidden="true"></i> It takes you out
+              of the usual life, full with well-known habits and throws you in a
+              beautiful unpredictable world where each day brings something new.
+            </p>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div id="contact" class="details-description">
+          <div class="note-body">
+            <p>If you want to contact me, you can reach me here:</p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              valentin.panait@gmail.com |
+              <a
+                href="https://web.facebook.com/valentin.panait.77"
+                target="_blank"
+                ><i class="fa fa-facebook" aria-hidden="true"></i
+              ></a>
+              |
+              <a href="https://www.instagram.com/whereisvali/" target="_blank"
+                ><i class="fa fa-instagram" aria-hidden="true"> | </i></a
+              >
+              <a href="https://www.linkedin.com/in/vali-panait" target="_blank"
+                ><i class="fa fa-linkedin" aria-hidden="true"></i
+              ></a>
+              | <i class="fa fa-whatsapp" aria-hidden="true"></i> (+4)0 724 083
+              832
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/script.js"></script>
-</body>
-
+  </body>
 </html>
