@@ -7512,6 +7512,10 @@ agm-map {
     color: #016eb5;
     font-style: normal
 }
+b {
+    color: #B54801;
+    /* font-weight: normal */
+}
 
 .cv-details .skill.fixed-width {
     width: 150px;
